@@ -51,7 +51,7 @@ local function getPostalServer(coords)
     end
     local _code = postals[_nearestIndex].code
     local nearest = {code = _code, dist = _nearestD}
-    return nearest or nil
+    return nearest and nearest.code or nil
 end
 
 exports('getPostalServer', function(coords)
